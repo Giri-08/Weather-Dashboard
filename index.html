@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <h1>Weather Dashboard</h1>
+        <div class="small muted">Search cities • Geolocation • Forecast</div>
+      </div>
+
+      <div class="controls">
+        <div class="unit-toggle card" id="unitToggle" title="Switch units">
+          <button id="cBtn" class="active">°C</button>
+          <button id="fBtn">°F</button>
+        </div>
+        <button id="geoBtn" class="btn-ghost">Use my location</button>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="search-row">
+        <input id="searchInput" type="search" placeholder="Enter city name (e.g. New Delhi)">
+        <button id="searchBtn" class="btn-primary">Search</button>
+        <button id="addFavBtn" class="btn-ghost" title="Add current city to favorites">★ Add</button>
+      </div>
+      <div id="message" style="margin-top:12px"></div>
+    </div>
+
+    <div class="layout">
+      <main>
+        <section id="weatherSection" class="card" style="display:none;">
+          <div class="current">
+            <div class="icon"><img id="currentIcon" alt="" width="96" height="96"/></div>
+            <div class="meta">
+              <h2 id="cityName"></h2>
+              <p class="temp" id="temp">--°</p>
+              <div class="small">
+                <span id="desc">--</span> · Humidity: <span id="humidity">--</span>% · Wind: <span id="wind">--</span>
+                <small class="muted" id="sunTimes"></small>
+              </div>
+              <small class="time" id="updateTime"></small>
+            </div>
+          </div>
+          <h3>5-day forecast</h3>
+          <div id="forecast" class="forecast"></div>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3>Favorites</h3>
+          <div class="favorites" id="favoritesList"></div>
+          <div class="fav-actions">
+            <button id="clearFavs" class="btn-ghost">Clear favorites</button>
+            <button id="refreshFavs" class="btn-ghost">Refresh all</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="muted">
+      <code>Built with OpenWeather API</code>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+:root {
+  --bg:#f5f7fb; --card:#ffffff; --accent:#2e9ad8; --muted:#6b7280;
+  --radius:12px; --gap:16px; --maxw:1000px;
+}
+* { box-sizing:border-box; }
+body {
+  font-family: Arial, sans-serif;
+  margin:0; padding:28px;
+  background:linear-gradient(180deg,#eef6fb 0%,var(--bg) 100%);
+  color:#0b1220; display:flex; justify-content:center;
+}
+.wrap { width:100%; max-width:var(--maxw); }
+header { display:flex; gap:12px; align-items:center; margin-bottom:18px; }
+.logo h1 { margin:0; font-size:22px; }
+.controls { margin-left:auto; display:flex; gap:8px; align-items:center; }
+.card { background:var(--card); border-radius:var(--radius); padding:16px;
+  box-shadow:0 6px 18px rgba(11,18,32,0.06); margin-bottom:var(--gap); }
+.search-row { display:flex; gap:10px; }
+input[type="search"] { flex:1; padding:10px; border-radius:8px; border:1px solid #e6eef6; }
+button { padding:10px 12px; border-radius:8px; border:0; cursor:pointer; }
+.btn-primary { background:var(--accent); color:white; }
+.btn-ghost { background:transparent; border:1px solid #dfe8f2; }
+.layout { display:grid; grid-template-columns: 1fr 320px; gap:16px; }
+@media (max-width:880px){ .layout{grid-template-columns:1fr;} .controls{display:none;} }
+.current { display:flex; gap:16px; align-items:center; }
+.temp { font-size:48px; font-weight:bold; margin:0; }
+.small { color:var(--muted); font-size:14px; }
+.forecast { display:flex; gap:8px; margin-top:12px; overflow-x:auto; }
+.day { min-width:110px; background:#fefefe; border-radius:10px; padding:10px; text-align:center;
+  box-shadow:0 4px 12px rgba(14,30,60,0.04); }
+.favorites { display:flex; flex-direction:column; gap:8px; }
+.fav-item { display:flex; justify-content:space-between; align-items:center;
+  background:#fbfdff; border:1px solid #eef6fb; border-radius:8px; padding:8px; }
+.error { color:#b91c1c; background:#fff1f2; padding:8px; border-radius:8px; border:1px solid #fee2e2; }
+.unit-toggle { display:flex; gap:6px; background:#f4f7fb; padding:6px; border-radius:8px; }
+.unit-toggle .active { background:var(--accent); color:white; }
+footer { margin-top:14px; color:var(--muted); font-size:13px; }
